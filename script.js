@@ -7,7 +7,7 @@ var currentHour = dayjs().hour()
 
 
 function createTimeBlocks(){
-    const dayHours = [9, 10, 11,12,13,14,15,16,17,18,19,20,21]
+    const dayHours = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24]
     // console.log('current hour = ' + currentHour)
     // console.log('current hour = ' + dayHours[0])
     // console.log('<', dayHours[8] < currentHour)
@@ -39,20 +39,19 @@ function createTimeBlocks(){
         //     const input = eventInput.val();
         // }) `$( "body" ).data( "foo", 52 );`
 
+        const elements = $('.event-input').data('hour', dayHours[i]);
+        const dataHourValue = parseInt(elements.data('hour'))
         
-        console.log(eventInput.attr( "data=[hour]"))
-    
-        
-        if (eventInput.getAttribute('data-hour') < currentHour){
-            console.log(i, '<', dayHours[i] < currentHour)
+        if (dataHourValue < currentHour){
+            // console.log(i, '<', dayHours[i] < currentHour)
 
-            $('.event-input').addClass('past')
-        }else if (dayHours[i] === currentHour){
-            $('.event-input').addClass('present')
+            eventInput.addClass('past')
+        }else if (dataHourValue === currentHour){
+            eventInput.addClass('present')
         }
-        else if (dayHours[i] > currentHour){ 
-            console.log(i, 'else', dayHours[i] > currentHour)
-            $('.event-input').addClass('future')
+        else if (dataHourValue > currentHour){ 
+            // console.log(i, 'else', dayHours[i] > currentHour)
+            eventInput.addClass('future')
         } else{
             console.log('error')
         }
