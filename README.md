@@ -16,3 +16,5 @@ https://hitesh70738.github.io/hits-planner/
 This weeks challenege has been difficult to attempt. The logic makes sense and certain parts click. I need to study and practice more on how to save and get localstorage items. I understand the logic but the final piece is lacking some functionality of the site.
 
 ## Screenshots 
+
+<img src = 'images/Main-page.png'>
